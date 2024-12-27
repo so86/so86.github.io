@@ -4,14 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Hello World Code</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Highlight.js CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" rel="stylesheet">
+
     <style>
         body {
             background-color: #f8f9fa;
         }
 
         .code-container {
+            position: relative;
             background: #272822;
             color: #f8f8f2;
             padding: 1rem;
@@ -20,88 +30,188 @@
             overflow-x: auto;
         }
 
-        .code-title {
-            font-weight: bold;
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
             color: #61dafb;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .copy-button:hover {
+            color: #42a5f5;
+        }
+
+        .tab-content {
+            margin-top: 1rem;
+        }
+
+        .alert-copy {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1050;
         }
     </style>
 </head>
 
 <body>
     <div class="container mt-5">
-        <h1 class="text-center mb-4">🌟 Hello World🌟</h1>
-        <p class="text-center text-muted">Switch between tabs to explore "Hello World" programs in various languages.</p>
+        <h1 class="text-center mb-4">🌟 Hello World Codes 🌟</h1>
+        <p class="text-center text-muted">Explore "Hello World" programs in various languages and copy the code to your clipboard.</p>
 
         <!-- Tabs navigation -->
         <ul class="nav nav-tabs" id="helloWorldTabs" role="tablist">
-            <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="python-tab" data-bs-toggle="tab" data-bs-target="#python" type="button" role="tab">Python</button>
+            <li class="nav-item">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#golang" type="button">
+                    <i class="fab fa-golang"></i> Go
+                </button>
             </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="javascript-tab" data-bs-toggle="tab" data-bs-target="#javascript" type="button" role="tab">JavaScript</button>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#rust" type="button">
+                    <i class="fas fa-code-branch"></i> Rust
+                </button>
             </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="cpp-tab" data-bs-toggle="tab" data-bs-target="#cpp" type="button" role="tab">C++</button>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#cpp" type="button">
+                    <i class="fas fa-code"></i> C++
+                </button>
             </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="java-tab" data-bs-toggle="tab" data-bs-target="#java" type="button" role="tab">Java</button>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#csharp" type="button">
+                    <i class="fas fa-code"></i> C#
+                </button>
             </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="golang-tab" data-bs-toggle="tab" data-bs-target="#golang" type="button" role="tab">Go</button>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#java" type="button">
+                    <i class="fab fa-java"></i> Java
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#php" type="button">
+                    <i class="fab fa-php"></i> PHP
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#python" type="button">
+                    <i class="fab fa-python"></i> Python
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#javascript" type="button">
+                    <i class="fab fa-js"></i> JavaScript
+                </button>
             </li>
         </ul>
 
         <!-- Tabs content -->
-        <div class="tab-content mt-4">
-            <div class="tab-pane fade show active" id="python" role="tabpanel" aria-labelledby="python-tab">
+        <div class="tab-content mt-3">
+            <div class="tab-pane fade show active" id="golang">
                 <div class="code-container">
-                    <div class="code-title">Python</div>
-                    <pre>print("Hello, World!")</pre>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="javascript" role="tabpanel" aria-labelledby="javascript-tab">
-                <div class="code-container">
-                    <div class="code-title">JavaScript</div>
-                    <pre>console.log("Hello, World!");</pre>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="cpp" role="tabpanel" aria-labelledby="cpp-tab">
-                <div class="code-container">
-                    <div class="code-title">C++</div>
-                    <pre>#include &lt;iostream&gt;
-
-int main() {
-    std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl;
-    return 0;
-}</pre>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="java" role="tabpanel" aria-labelledby="java-tab">
-                <div class="code-container">
-                    <div class="code-title">Java</div>
-                    <pre>public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-}</pre>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="golang" role="tabpanel" aria-labelledby="golang-tab">
-                <div class="code-container">
-                    <div class="code-title">Go</div>
-                    <pre>package main
+                    <button class="copy-button" onclick="copyToClipboard('go-code')"><i class="fas fa-copy"></i></button>
+                    <pre><code id="go-code" class="language-go">package main
 
 import "fmt"
 
 func main() {
     fmt.Println("Hello, World!")
-}</pre>
+}</code></pre>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="rust">
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyToClipboard('rust-code')"><i class="fas fa-copy"></i></button>
+                    <pre><code id="rust-code" class="language-rust">fn main() {
+    println!("Hello, World!");
+}</code></pre>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="cpp">
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyToClipboard('cpp-code')"><i class="fas fa-copy"></i></button>
+                    <pre><code id="cpp-code" class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
+}</code></pre>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="csharp">
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyToClipboard('csharp-code')"><i class="fas fa-copy"></i></button>
+                    <pre><code id="csharp-code" class="language-csharp">using System;
+
+class Program {
+    static void Main() {
+        Console.WriteLine("Hello, World!");
+    }
+}</code></pre>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="java">
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyToClipboard('java-code')"><i class="fas fa-copy"></i></button>
+                    <pre><code id="java-code" class="language-java">public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</code></pre>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="php">
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyToClipboard('php-code')"><i class="fas fa-copy"></i></button>
+                    <pre><code id="php-code" class="language-php">&lt;?php
+echo "Hello, World!";
+?></code></pre>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="python">
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyToClipboard('python-code')"><i class="fas fa-copy"></i></button>
+                    <pre><code id="python-code" class="language-python">print("Hello, World!")</code></pre>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="javascript">
+                <div class="code-container">
+                    <button class="copy-button" onclick="copyToClipboard('javascript-code')"><i class="fas fa-copy"></i></button>
+                    <pre><code id="javascript-code" class="language-javascript">console.log("Hello, World!");</code></pre>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <!-- Alert for Copy Success -->
+    <div class="alert alert-success alert-copy collapse" id="copyAlert" role="alert">
+        <i class="fas fa-check-circle"></i> Code copied to clipboard!
+    </div>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Highlight.js JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll('pre code').forEach((el) => {
+                hljs.highlightElement(el);
+            });
+        });
+
+        function copyToClipboard(elementId) {
+            const text = document.getElementById(elementId).textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const alert = document.getElementById("copyAlert");
+                const bootstrapAlert = new bootstrap.Collapse(alert, {
+                    toggle: true
+                });
+                setTimeout(() => bootstrapAlert.hide(), 3000);
+            });
+        }
+    </script>
+</body>
 </html>

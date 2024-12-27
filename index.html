@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World Showcase</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .code-container {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: "Courier New", Courier, monospace;
+            overflow-x: auto;
+        }
+
+        .code-title {
+            font-weight: bold;
+            color: #61dafb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">🌟 Hello World Showcase 🌟</h1>
+        <p class="text-center text-muted">Switch between tabs to explore "Hello World" programs in various languages.</p>
+
+        <!-- Tabs navigation -->
+        <ul class="nav nav-tabs" id="helloWorldTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="python-tab" data-bs-toggle="tab" data-bs-target="#python" type="button" role="tab">Python</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="javascript-tab" data-bs-toggle="tab" data-bs-target="#javascript" type="button" role="tab">JavaScript</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="cpp-tab" data-bs-toggle="tab" data-bs-target="#cpp" type="button" role="tab">C++</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="java-tab" data-bs-toggle="tab" data-bs-target="#java" type="button" role="tab">Java</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="golang-tab" data-bs-toggle="tab" data-bs-target="#golang" type="button" role="tab">Go</button>
+            </li>
+        </ul>
+
+        <!-- Tabs content -->
+        <div class="tab-content mt-4">
+            <div class="tab-pane fade show active" id="python" role="tabpanel" aria-labelledby="python-tab">
+                <div class="code-container">
+                    <div class="code-title">Python</div>
+                    <pre>print("Hello, World!")</pre>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="javascript" role="tabpanel" aria-labelledby="javascript-tab">
+                <div class="code-container">
+                    <div class="code-title">JavaScript</div>
+                    <pre>console.log("Hello, World!");</pre>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="cpp" role="tabpanel" aria-labelledby="cpp-tab">
+                <div class="code-container">
+                    <div class="code-title">C++</div>
+                    <pre>#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl;
+    return 0;
+}</pre>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="java" role="tabpanel" aria-labelledby="java-tab">
+                <div class="code-container">
+                    <div class="code-title">Java</div>
+                    <pre>public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</pre>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="golang" role="tabpanel" aria-labelledby="golang-tab">
+                <div class="code-container">
+                    <div class="code-title">Go</div>
+                    <pre>package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, World!")
+}</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
